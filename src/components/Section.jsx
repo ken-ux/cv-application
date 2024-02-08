@@ -1,10 +1,18 @@
 import PropTypes from "prop-types";
+import "../styles/Section.css";
+import { useState } from "react";
 
 function Section({ title, children }) {
+  const [visible, setVisible] = useState(false);
+
+  function clickHandler() {
+    setVisible(!visible);
+  }
+
   return (
-    <section>
+    <section onClick={clickHandler}>
       <h1>{title}</h1>
-      {children}
+      {visible && children}
     </section>
   );
 }
