@@ -19,10 +19,13 @@ function Experience() {
         <label htmlFor="endYear">To:</label>
         <input type="month" name="endYear" id="endYear" />
       </div>
-      <div className="form-field">
+      <div className="form-field checkbox">
         <input type="checkbox" name="currentJob" id="currentJob" />
-        <label htmlFor="currentJob">I am currently working at this job.</label>
+        <label htmlFor="currentJob">
+          I am currently working in this position.
+        </label>
       </div>
+      <button type="button">Add Another Position</button>
       <button type="submit">Submit</button>
     </form>
   );

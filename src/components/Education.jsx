@@ -15,10 +15,13 @@ function Education() {
         <label htmlFor="endYear">To:</label>
         <input type="month" name="endYear" id="endYear" />
       </div>
-      <div className="form-field">
+      <div className="form-field checkbox">
         <input type="checkbox" name="currentSchool" id="currentSchool" />
-        <label htmlFor="currentSchool">I am currently attending this school.</label>
+        <label htmlFor="currentSchool">
+          I am currently attending this school.
+        </label>
       </div>
+      <button type="button">Add Another School</button>
       <button type="submit">Submit</button>
     </form>
   );
