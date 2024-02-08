@@ -3,15 +3,17 @@ import "../styles/Section.css";
 import { useState } from "react";
 
 function Section({ title, children }) {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   function clickHandler() {
     setVisible(!visible);
   }
 
   return (
-    <section onClick={clickHandler}>
-      <h1>{title}</h1>
+    <section>
+      <div>
+        <h1 onClick={clickHandler}>{title}</h1>
+      </div>
       {visible && children}
     </section>
   );
