@@ -1,10 +1,12 @@
-function PreviewCV() {
+import PropTypes from "prop-types";
+
+function PreviewCV({ contact }) {
   return (
     <div>
       <div>
-        <h1>Full Name</h1>
-        <p>Email</p>
-        <p>Phone Number</p>
+        <h1>{contact.name}</h1>
+        <p>{contact.email}</p>
+        <p>{contact.phoneNumber}</p>
       </div>
       <div>
         <h1>Education</h1>
@@ -22,5 +24,9 @@ function PreviewCV() {
     </div>
   );
 }
+
+PreviewCV.propTypes = {
+  contact: PropTypes.object,
+};
 
 export default PreviewCV;

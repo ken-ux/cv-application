@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Section from "./components/Section";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
@@ -6,11 +7,17 @@ import PreviewCV from "./components/PreviewCV";
 import "./styles/App.css";
 
 function App() {
+  const [contact, setContact] = useState({
+    name: "John Doe",
+    email: "johndoe@gmail.com",
+    phoneNumber: "123-456-7890",
+  });
+
   return (
     <>
       <div>
         <Section title="Contact">
-          <Contact />
+          <Contact submitForm={setContact} />
         </Section>
         <Section title="Education">
           <Education />
@@ -19,7 +26,7 @@ function App() {
           <Experience />
         </Section>
       </div>
-      <PreviewCV></PreviewCV>
+      <PreviewCV contact={contact}></PreviewCV>
     </>
   );
 }
