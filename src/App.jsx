@@ -13,6 +13,15 @@ function App() {
     phoneNumber: "123-456-7890",
   });
 
+  const [education, setEducation] = useState([
+    {
+      schoolName: "College of Imaginary",
+      degree: "Degree in Major",
+      startYear: "2020-01",
+      endYear: "2024-01",
+    },
+  ]);
+
   return (
     <>
       <div>
@@ -20,13 +29,13 @@ function App() {
           <Contact submitForm={setContact} />
         </Section>
         <Section title="Education">
-          <Education />
+          <Education submitForm={setEducation} />
         </Section>
         <Section title="Experience">
           <Experience />
         </Section>
       </div>
-      <PreviewCV contact={contact}></PreviewCV>
+      <PreviewCV contact={contact} education={education}></PreviewCV>
     </>
   );
 }
