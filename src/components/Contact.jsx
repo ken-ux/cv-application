@@ -11,6 +11,7 @@ function Contact({ submitForm }) {
       <div className="form-field">
         <label htmlFor="name">Name:</label>
         <input
+          autoComplete="name"
           type="text"
           name="name"
           id="name"
@@ -21,6 +22,7 @@ function Contact({ submitForm }) {
       <div className="form-field">
         <label htmlFor="email">Email:</label>
         <input
+          autoComplete="email"
           type="email"
           name="email"
           id="email"

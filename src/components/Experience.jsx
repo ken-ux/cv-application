@@ -3,7 +3,12 @@ function Experience() {
     <form action="">
       <div className="form-field">
         <label htmlFor="company">Company Name:</label>
-        <input type="text" name="company" id="company" />
+        <input
+          autoComplete="organization"
+          type="text"
+          name="company"
+          id="company"
+        />
       </div>
       <div className="form-field">
         <label htmlFor="position">Position Title:</label>
