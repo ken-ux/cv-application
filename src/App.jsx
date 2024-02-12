@@ -23,6 +23,17 @@ function App() {
     },
   ]);
 
+  const [experience, setExperience] = useState([
+    {
+      id: 1,
+      companyName: "Fake Company",
+      position: "Business Analyst",
+      description: "Analyzed some business.",
+      startYear: "2021-03",
+      endYear: "2022-08",
+    },
+  ]);
+
   return (
     <>
       <div>
@@ -33,10 +44,14 @@ function App() {
           <Education submitForm={setEducation} education={education} />
         </Section>
         <Section title="Experience">
-          <Experience />
+          <Experience submitForm={setExperience} experience={experience[0]} />
         </Section>
       </div>
-      <PreviewCV contact={contact} education={education}></PreviewCV>
+      <PreviewCV
+        contact={contact}
+        education={education}
+        experience={experience}
+      ></PreviewCV>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function PreviewCV({ contact, education }) {
+function PreviewCV({ contact, education, experience }) {
   const schools = education.map((school) => {
     return (
       <div key={school.id}>
@@ -12,6 +12,20 @@ function PreviewCV({ contact, education }) {
       </div>
     );
   });
+
+  const jobs = experience.map((job) => {
+    return (
+      <div key={job.id}>
+        <p>{job.companyName}</p>
+        <p>{job.position}</p>
+        <p>{job.description}</p>
+        <p>
+          {job.startYear} to {job.endYear}
+        </p>
+      </div>
+    );
+  });
+
   return (
     <div>
       <div>
@@ -25,10 +39,7 @@ function PreviewCV({ contact, education }) {
       </div>
       <div>
         <h1>Experience</h1>
-        <p>Company Name</p>
-        <p>Position</p>
-        <p>Description</p>
-        <p>YYYY to YYYY</p>
+        {jobs}
       </div>
     </div>
   );
@@ -37,6 +48,7 @@ function PreviewCV({ contact, education }) {
 PreviewCV.propTypes = {
   contact: PropTypes.object,
   education: PropTypes.array,
+  experience: PropTypes.array,
 };
 
 export default PreviewCV;
