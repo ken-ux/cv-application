@@ -63,13 +63,19 @@ function SchoolForm({ id, submitForm }) {
         />
         <label htmlFor={id}>I am currently attending this school.</label>
       </div>
-      <button type="button">Delete</button>
       <button
         type="submit"
         onClick={(e) => {
-          e.preventDefault;
-          // remember that the education hook is an array
-          // submitForm([])
+          e.preventDefault();
+          submitForm([
+            {
+              id: id,
+              schoolName: schoolName,
+              degree: degree,
+              startYear: startYear,
+              endYear: endYear,
+            },
+          ]);
         }}
       >
         Submit
