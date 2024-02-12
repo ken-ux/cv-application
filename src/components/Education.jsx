@@ -2,7 +2,7 @@
 import SchoolForm from "./SchoolForm";
 import PropTypes from "prop-types";
 
-function Education({ submitForm }) {
+function Education({ submitForm, education }) {
   // const [forms, setForms] = useState([{ id: 1 }]);
 
   // const addForm = () => {
@@ -18,7 +18,7 @@ function Education({ submitForm }) {
 
   return (
     <>
-      <SchoolForm id={1} submitForm={submitForm} />
+      <SchoolForm submitForm={submitForm} education={education[0]} />
       {/* <button type="button" onClick={addForm}>
         Add Another School
       </button> */}
@@ -28,6 +28,7 @@ function Education({ submitForm }) {
 
 Education.propTypes = {
   submitForm: PropTypes.func,
+  education: PropTypes.array,
 };
 
 export default Education;

@@ -15,6 +15,7 @@ function App() {
 
   const [education, setEducation] = useState([
     {
+      id: 1,
       schoolName: "College of Imaginary",
       degree: "Degree in Major",
       startYear: "2020-01",
@@ -26,10 +27,10 @@ function App() {
     <>
       <div>
         <Section title="Contact">
-          <Contact submitForm={setContact} />
+          <Contact submitForm={setContact} contact={contact} />
         </Section>
         <Section title="Education">
-          <Education submitForm={setEducation} />
+          <Education submitForm={setEducation} education={education} />
         </Section>
         <Section title="Experience">
           <Experience />

@@ -1,13 +1,15 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function SchoolForm({ id, submitForm }) {
+function SchoolForm({ submitForm, education }) {
   // Disables the endYear input and checks the currentSchool checkbox if there's an endYear
-  const [checked, setChecked] = useState(false);
-  const [schoolName, setSchoolName] = useState("College of Imaginary");
-  const [degree, setDegree] = useState("Degree in Major");
-  const [startYear, setStartYear] = useState("2020-01");
-  const [endYear, setEndYear] = useState("2024-01");
+  const [checked, setChecked] = useState(
+    education.endYear === "Current" ? true : false
+  );
+  const [schoolName, setSchoolName] = useState(education.schoolName);
+  const [degree, setDegree] = useState(education.degree);
+  const [startYear, setStartYear] = useState(education.startYear);
+  const [endYear, setEndYear] = useState(education.endYear);
 
   return (
     <form>
@@ -54,13 +56,15 @@ function SchoolForm({ id, submitForm }) {
         <input
           type="checkbox"
           name="currentSchool"
-          id={id}
+          id={education.id}
           defaultChecked={checked ? true : null}
           onChange={() => {
             setChecked(!checked);
           }}
         />
-        <label htmlFor={id}>I am currently attending this school.</label>
+        <label htmlFor={education.id}>
+          I am currently attending this school.
+        </label>
       </div>
       <button
         type="submit"
@@ -68,7 +72,7 @@ function SchoolForm({ id, submitForm }) {
           e.preventDefault();
           submitForm([
             {
-              id: id,
+              id: education.id,
               schoolName: schoolName,
               degree: degree,
               startYear: startYear,
@@ -84,8 +88,8 @@ function SchoolForm({ id, submitForm }) {
 }
 
 SchoolForm.propTypes = {
-  id: PropTypes.number,
   submitForm: PropTypes.func,
+  education: PropTypes.object,
 };
 
 export default SchoolForm;

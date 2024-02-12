@@ -1,10 +1,10 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Contact({ submitForm }) {
-  const [name, setName] = useState("John Doe");
-  const [email, setEmail] = useState("johndoe@gmail.com");
-  const [phoneNumber, setPhoneNumber] = useState("123-456-7890");
+function Contact({ contact, submitForm }) {
+  const [name, setName] = useState(contact.name);
+  const [email, setEmail] = useState(contact.email);
+  const [phoneNumber, setPhoneNumber] = useState(contact.phoneNumber);
 
   return (
     <form action="">
@@ -57,6 +57,7 @@ function Contact({ submitForm }) {
 
 Contact.propTypes = {
   submitForm: PropTypes.func,
+  contact: PropTypes.object,
 };
 
 export default Contact;
