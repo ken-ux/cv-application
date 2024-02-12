@@ -12,7 +12,12 @@ function Section({ title, children }) {
   return (
     <section>
       <div>
-        <h1 onClick={clickHandler}>{title}</h1>
+        <h1
+          onClick={clickHandler}
+          className={!visible ? "collapsed" : undefined}
+        >
+          {title}
+        </h1>
       </div>
       {visible && children}
     </section>
