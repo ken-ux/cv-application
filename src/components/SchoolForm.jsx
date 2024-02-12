@@ -56,13 +56,13 @@ function SchoolForm({ submitForm, education }) {
         <input
           type="checkbox"
           name="currentSchool"
-          id={education.id}
+          id={`currentSchool_${education.id}`}
           defaultChecked={checked ? true : null}
           onChange={() => {
             setChecked(!checked);
           }}
         />
-        <label htmlFor={education.id}>
+        <label htmlFor={`currentSchool_${education.id}`}>
           I am currently attending this school.
         </label>
       </div>
