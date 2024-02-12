@@ -2,13 +2,12 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 function SchoolForm({ id, submitForm }) {
+  // Disables the endYear input and checks the currentSchool checkbox if there's an endYear
+  const [checked, setChecked] = useState(false);
   const [schoolName, setSchoolName] = useState("College of Imaginary");
   const [degree, setDegree] = useState("Degree in Major");
   const [startYear, setStartYear] = useState("2020-01");
   const [endYear, setEndYear] = useState("2024-01");
-
-  // Disables the endYear input and checks the currentSchool checkbox if there's an endYear
-  const [checked, setChecked] = useState(false);
 
   return (
     <form>
@@ -73,7 +72,7 @@ function SchoolForm({ id, submitForm }) {
               schoolName: schoolName,
               degree: degree,
               startYear: startYear,
-              endYear: endYear,
+              endYear: checked ? "Current" : endYear,
             },
           ]);
         }}
