@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import "../styles/Section.css";
 import { useState } from "react";
-import expandMore from "../images/expand_more.svg";
-import expandLess from "../images/expand_less.svg";
+import expandMore from "../assets/expand_more.svg";
+import expandLess from "../assets/expand_less.svg";
 
 function Section({ title, children }) {
   const [visible, setVisible] = useState(false);

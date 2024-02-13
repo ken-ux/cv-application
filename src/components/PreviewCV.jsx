@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "../styles/PreviewCV.css";
-import phone from "../images/phone.svg";
-import email from "../images/email.svg";
+import phone from "../assets/phone.svg";
+import email from "../assets/email.svg";
 
 function PreviewCV({ contact, education, experience }) {
   const schools = education.map((school) => {
