@@ -65,7 +65,14 @@ textarea {
 button {
   background-color: #778da9;
   color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 16px;
+  font-weight: 800;
   align-self: end;
+  transition: background-color 0.2s ease-out;
+}
+
+button:active {
+  background-color: #415a77;
 }
