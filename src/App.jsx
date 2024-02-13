@@ -16,8 +16,8 @@ function App() {
   const [education, setEducation] = useState([
     {
       id: 1,
-      schoolName: "College of Imaginary",
-      degree: "Degree in Major",
+      schoolName: "Coastal State University",
+      degree: "Bachelor of Arts in Multimedia Design",
       startYear: "2020-01",
       endYear: "2024-01",
     },
@@ -26,9 +26,10 @@ function App() {
   const [experience, setExperience] = useState([
     {
       id: 1,
-      companyName: "Fake Company",
-      position: "Business Analyst",
-      description: "Analyzed some business.",
+      companyName: "Aperture Science",
+      position: "Junior Marketing Analyst",
+      description:
+        "Conduct market research and analysis to identify emerging trends and opportunities within the scientific community. Assist in the development of marketing strategies and campaigns to promote Aperture Science's innovative products and services.",
       startYear: "2021-03",
       endYear: "2022-08",
     },
