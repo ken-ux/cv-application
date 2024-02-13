@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function SchoolForm({ submitForm, education }) {
   // Disables the endYear input and checks the currentSchool checkbox if there's an endYear
   const [checked, setChecked] = useState(
-    education.endYear === "Current" ? true : false
+    education.endYear === "Present" ? true : false
   );
   const [schoolName, setSchoolName] = useState(education.schoolName);
   const [degree, setDegree] = useState(education.degree);
@@ -76,7 +76,7 @@ function SchoolForm({ submitForm, education }) {
               schoolName: schoolName,
               degree: degree,
               startYear: startYear,
-              endYear: checked ? "Current" : endYear,
+              endYear: checked ? "Present" : endYear,
             },
           ]);
         }}

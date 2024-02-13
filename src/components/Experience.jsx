@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Experience({ submitForm, experience }) {
   const [checked, setChecked] = useState(
-    experience.endYear === "Current" ? true : false
+    experience.endYear === "Present" ? true : false
   );
   const [companyName, setCompanyName] = useState(experience.companyName);
   const [position, setPosition] = useState(experience.position);
@@ -91,7 +91,7 @@ function Experience({ submitForm, experience }) {
               position: position,
               description: description,
               startYear: startYear,
-              endYear: checked ? "Current" : endYear,
+              endYear: checked ? "Present" : endYear,
             },
           ]);
         }}
