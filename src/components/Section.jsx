@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import "../styles/Section.css";
 import { useState } from "react";
+import expandMore from "../images/expand_more.svg";
+import expandLess from "../images/expand_less.svg";
 
 function Section({ title, children }) {
   const [visible, setVisible] = useState(true);
@@ -11,13 +13,9 @@ function Section({ title, children }) {
 
   return (
     <section>
-      <div>
-        <h1
-          onClick={clickHandler}
-          className={!visible ? "collapsed" : undefined}
-        >
-          {title}
-        </h1>
+      <div className="section-header" onClick={clickHandler}>
+        <h1 className={!visible ? "collapsed" : undefined}>{title}</h1>
+        <img src={visible ? expandLess : expandMore} alt="" />
       </div>
       {visible && children}
     </section>

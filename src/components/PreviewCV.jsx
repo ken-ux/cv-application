@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import "../styles/PreviewCV.css";
+import phone from "../images/phone.svg";
+import email from "../images/email.svg";
 
 function PreviewCV({ contact, education, experience }) {
   const schools = education.map((school) => {
@@ -41,9 +43,12 @@ function PreviewCV({ contact, education, experience }) {
     <div className="cv-container">
       <div className="contact-container">
         <h1>{contact.name}</h1>
-        <p>
-          {contact.email} | {contact.phoneNumber}
-        </p>
+        <div>
+          <img src={email} alt="" />
+          <p>{contact.email}</p>
+          <img src={phone} alt="" />
+          <p>{contact.phoneNumber}</p>
+        </div>
       </div>
       <div className="education-container">
         <h2>Education</h2>

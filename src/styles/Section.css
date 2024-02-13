@@ -1,18 +1,20 @@
 section {
   background-color: #415a77;
   padding: 0.75rem;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
-section h1 {
+.section-header {
   color: white;
-  margin-bottom: 0.75rem;
   padding: 1rem;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1.collapsed {
-  margin-bottom: 0;
+.section-header img {
+  filter: invert(1);
 }
 
 form {
@@ -21,7 +23,8 @@ form {
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin: 1rem;
   border-radius: 10px;
 }
 
@@ -36,12 +39,20 @@ form > div {
 }
 
 .form-field span {
-  font-weight: 800;
+  font-style: italic;
   font-size: 0.8rem;
 }
 
 .form-field.checkbox {
   flex-direction: row;
+}
+
+label {
+  font-weight: 800;
+}
+
+.form-field.checkbox label {
+  font-weight: normal;
 }
 
 input,
