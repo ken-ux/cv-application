@@ -5,7 +5,7 @@ import expandMore from "../images/expand_more.svg";
 import expandLess from "../images/expand_less.svg";
 
 function Section({ title, children }) {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   function clickHandler() {
     setVisible(!visible);
